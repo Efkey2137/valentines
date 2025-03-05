@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+# Valentine's Interactive Hearts Animation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A delightful interactive web application that creates a romantic animation with personalized hearts. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Personalized Initials**: Enter two initials to create personalized heart animations
+- **Interactive Animation**: Watch as two hearts merge into one in a smooth animation
+- **Dark/Light Mode**: Toggle between dark and light themes for different ambiance
+- **Responsive Design**: Works seamlessly on both mobile and desktop devices
+- **Minimalist UI**: Clean and modern interface focused on the animation
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Built With
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React 18
+- TypeScript
+- Vite
+- TailwindCSS
+- Lucide React Icons
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 💡 How It Works
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Initial Setup**:
+   - Enter the first person's initial
+   - Enter the second person's initial
+   - Choose between light and dark mode
+   - Click "Start Animation" to begin
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. **Animation Sequence**:
+   - Two hearts appear with entered initials
+   - Hearts pulse three times
+   - Hearts merge into one larger heart
+   - "I LOVE YOU" message appears
+
+## 🎨 Customization
+
+You can customize the appearance by:
+- Switching between dark and light modes
+- Entering different initials
+
+## 📱 Responsive Design
+
+The app is fully responsive with:
+- Vertical heart layout on mobile devices
+- Horizontal heart layout on desktop
+- Optimized text and heart sizes for all screens
+

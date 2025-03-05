@@ -4,7 +4,6 @@ import { Heart } from "lucide-react"
 export default function AnimatedHearts() {
   const [animationStage, setAnimationStage] = useState(-1) // -1 for setup stage
   const [showText, setShowText] = useState(false)
-  const [tapCount, setTapCount] = useState(0)
   const [isTapping, setIsTapping] = useState(false)
   const [merged, setMerged] = useState(false)
   const [firstLetter, setFirstLetter] = useState("")
@@ -27,7 +26,6 @@ export default function AnimatedHearts() {
 
     setTimeout(() => {
       setIsTapping(false)
-      setTapCount(1)
 
       // Second tap
       setTimeout(() => {
@@ -35,7 +33,6 @@ export default function AnimatedHearts() {
 
         setTimeout(() => {
           setIsTapping(false)
-          setTapCount(2)
 
           // Third tap
           setTimeout(() => {
@@ -43,7 +40,6 @@ export default function AnimatedHearts() {
 
             setTimeout(() => {
               setIsTapping(false)
-              setTapCount(3)
 
               // Move to merging stage after all 3 taps
               setTimeout(() => {

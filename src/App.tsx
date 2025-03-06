@@ -100,9 +100,9 @@ export default function AnimatedHearts() {
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all
-                  border ${isDarkMode 
-                    ? 'border-white/20 text-white hover:bg-white/10' 
-                    : 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                  ${isDarkMode 
+                    ? 'border-white/20 bg-white/10 text-white hover:bg-white/20' 
+                    : 'border border-gray-300 text-gray-700 hover:bg-gray-100'
                   }
                   backdrop-blur-sm`}
               >

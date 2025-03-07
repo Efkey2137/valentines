@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Heart } from "lucide-react"
 
 export default function AnimatedHearts() {
@@ -9,6 +9,35 @@ export default function AnimatedHearts() {
   const [firstLetter, setFirstLetter] = useState("")
   const [secondLetter, setSecondLetter] = useState("")
   const [isDarkMode, setIsDarkMode] = useState(false)
+
+  const manifestData = {
+    name: "Valentine's App",
+    short_name: "Valentine",
+    display: "standalone",
+    start_url: ".",
+    background_color: "#ffffff",
+    theme_color: "#ffffff"
+  }
+
+  useEffect(() => {
+    // Update theme-color meta tag
+    const themeColor = document.querySelector('meta[name="theme-color"]')
+    if (themeColor) {
+      themeColor.setAttribute('content', isDarkMode ? '#111827' : '#ffffff')
+    }
+
+    // Update manifest dynamically
+    const manifestLink = document.querySelector('link[rel="manifest"]')
+    if (manifestLink) {
+      const manifest = {
+        ...manifestData,
+        background_color: isDarkMode ? '#111827' : '#ffffff',
+        theme_color: isDarkMode ? '#111827' : '#ffffff'
+      }
+      const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' })
+      manifestLink.setAttribute('href', URL.createObjectURL(blob))
+    }
+  }, [isDarkMode])
 
   const handleStart = () => {
     if (firstLetter && secondLetter) {

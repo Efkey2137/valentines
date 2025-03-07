@@ -160,7 +160,7 @@ export default function AnimatedHearts() {
     <div className={`flex flex-col items-center justify-center min-h-screen w-screen ${
       isDarkMode ? 'bg-gradient-to-b from-gray-900 to-gray-800' : 'bg-gradient-to-b from-pink-50 to-red-50'
     }`}>
-      <div className="relative h-96 md:h-64 w-full flex items-center justify-center">
+      <div className="relative h-[80vh] md:h-96 w-full flex items-center justify-center">
         {/* First heart */}
         <div
           className={`absolute transition-all duration-500 ease-in-out ${
@@ -169,7 +169,7 @@ export default function AnimatedHearts() {
           style={{
             transform: merged 
               ? "translate(0, 0)" 
-              : "translate(0, -100px)", // Move up on mobile
+              : `translate(${window.innerWidth >= 768 ? '-150px' : '0'}, ${window.innerWidth >= 768 ? '0' : '-150px'})`,
           }}
         >
           <div className="relative">
@@ -188,7 +188,7 @@ export default function AnimatedHearts() {
           style={{
             transform: merged 
               ? "translate(0, 0)" 
-              : "translate(0, 100px)", // Move down on mobile
+              : `translate(${window.innerWidth >= 768 ? '150px' : '0'}, ${window.innerWidth >= 768 ? '0' : '150px'})`,
           }}
         >
           <div className="relative">
